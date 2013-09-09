@@ -1,7 +1,7 @@
 {
     "name": "grunt-jenkins-build-number",
     "description": "Retrieves the latest build number/state from Jenkins.",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "homepage": "https://github.com/Ideame/grunt-jenkins-build-number",
     "author": {
         "name": "Juan Pablo Garcia",
