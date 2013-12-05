@@ -12,13 +12,14 @@ module.exports = function (grunt) {
 
         var done = this.async();
         var options = this.options({
-            state: 'lastBuild'
+            state: 'lastBuild',
+            path: ''
         });
-
+				
         var url = {
             host: options.hostname,
             port: 80,
-            path: util.format('/job/%s/%s/buildNumber', options.projectName, options.state)
+            path: util.format('%s/job/%s/%s/buildNumber', options.path, options.projectName, options.state)
         };
 
         if (options.username && options.password) {
@@ -30,6 +31,7 @@ module.exports = function (grunt) {
                 return done(new Error('Could not get latest successful build version, statusCode:' + res.statusCode));
             }
 
+            grunt.verbose.writeln('GET %s:%s%s', url.host, url.port, url.path);
             var body = '';
             res.on('data', function (chunk) { body += chunk; });
             res.on('end', function () {
