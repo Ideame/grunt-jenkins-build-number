@@ -18,7 +18,7 @@ module.exports = function (grunt) {
 				
         var url = {
             host: options.hostname,
-            port: 80,
+            port: options.port || 80,
             path: util.format('%s/job/%s/%s/buildNumber', options.path, options.projectName, options.state)
         };
 
