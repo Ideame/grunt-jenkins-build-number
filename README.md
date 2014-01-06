@@ -43,6 +43,7 @@ jenkinsBuildNumber: {
     dist: {
         options: {
             hostname: 'jenkins.mycompany.com',
+            port: 8080, //defaults to 80 if none chosen
             state: 'lastSuccessfulBuild',
             username: process.env.JENKINS_USERNAME,
             password: process.env.JENKINS_PASSWORD,
